@@ -13,10 +13,24 @@
     <body>
         <header>
             <nav class="navbar">
+                <!-- <div class="row">
+
+                </div>
+                <div class="row">
+
+                </div> -->
+                
                 <div class="container">
                     <h2>Project Thusk</h2>
                 </div>
                 <div class="container d-flex justify-content-center bg-light border-top border-bottom border-dark">
+                    <!-- <div class="row">
+
+                    </div>
+                    <div class="row">
+
+                    </div> -->
+                    
                     <a class="question-1 navbar-brand mx-5" href="#">Question 1</a>
                     <a class="question-2 navbar-brand mx-5" href="#">Question 2</a>
                     <a class="question-3 navbar-brand mx-5" href="#">Question 3</a>
@@ -24,17 +38,22 @@
             </nav>
         </header>
         <main>
-            <div class="container">
-                <h3 class="problem-title">Name of the Problem</h3>
+            <div class="container my-5">
+                <div class="row">
+                    <h3 class="problem-title">Name of the Problem</h3>
+                </div>
+
                 <div class="row border border-light mb-5">
                     <p class="description m-4">
                         Description
                     </p>
                 </div>
 
-                <div class="container d-flex flex-column align-items-center border border-light">
-                    <label class="my-3">Answer: <input type="Text" name="answer"></label>
-                    <input class="mb-3" type="submit" value="Check" name="check"/>
+                <div class="row d-flex flex-column align-items-center border border-light" style="width:40%">
+                    <form>
+                        <label for="answer" class="my-3">Answer: <input id="answer" class="input-answer" type="Text" name="answer" value="" required></label>
+                        <input class="submit mb-3" type="submit" value="Check" name="check">
+                    </form>
                 </div>
             </div>
         </main>
@@ -46,5 +65,6 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
         <script src="./JavaScript/index.js"></script>
+        <script src="./JavaScript/validation.js"></script>
     </body>
 </html>
