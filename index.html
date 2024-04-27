@@ -12,48 +12,42 @@
     </head>
     <body>
         <header>
-            <nav class="navbar">
-                <!-- <div class="row">
-
-                </div>
-                <div class="row">
-
-                </div> -->
-                
-                <div class="container">
-                    <h2>Project Thusk</h2>
-                </div>
-                <div class="container d-flex justify-content-center bg-light border-top border-bottom border-dark">
-                    <!-- <div class="row">
-
+            <nav class="navbar navbar-expand-sm navbar-light">
+                <div class="container-fluid flex-column">
+                    <div class="logo justify-content-start">
+                        <h1>Project Thusk</h1>
                     </div>
-                    <div class="row">
-
-                    </div> -->
-                    
-                    <a class="question-1 navbar-brand mx-5" href="#">Question 1</a>
-                    <a class="question-2 navbar-brand mx-5" href="#">Question 2</a>
-                    <a class="question-3 navbar-brand mx-5" href="#">Question 3</a>
+                    <div class="d-flex">
+                        <div class="navbar-nav">
+                            <a id="question-1" class="question nav-link navbar-brand mx-5 border rounded-pill" href="#">Question 1</a>
+                            <a id="question-2" class="question nav-link navbar-brand mx-5 border rounded-pill" href="#">Question 2</a>
+                            <a id="question-3" class="question nav-link navbar-brand mx-5 border rounded-pill" href="#">Question 3</a>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </header>
         <main>
-            <div class="container my-5">
+            <div class="container-fluid my-5">
                 <div class="row">
                     <h3 class="problem-title">Name of the Problem</h3>
                 </div>
 
                 <div class="row border border-light mb-5">
-                    <p class="description m-4">
+                    <p class="description m-4 d-flex justify-content-center px-4">
                         Description
                     </p>
                 </div>
 
-                <div class="row d-flex flex-column align-items-center border border-light" style="width:40%">
-                    <form>
-                        <label for="answer" class="my-3">Answer: <input id="answer" class="input-answer" type="Text" name="answer" value="" required></label>
+                <div class="row d-flex mx-auto flex-column align-items-center border border-light" style="width:40%">
+                    <form id="answer-form" class="show-form">
+                        <label for="answer" class="my-3">Answer: <input id="answer" class="input-answer" type="Text" name="answer" style="
+                            width:100%"></label>
                         <input class="submit mb-3" type="submit" value="Check" name="check">
                     </form>
+
+                    <p id="answer-response" class="hide-response"></p>
+
                 </div>
             </div>
         </main>

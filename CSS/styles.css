@@ -2,3 +2,16 @@ a{
     color:black;
     font-weight: solid;
 }
+
+.hide-response, .hide-form{
+    display:none;
+}
+
+.show-response{
+    display: flex;
+    justify-content: center;
+}
+
+.show-form{
+    display: inline;
+}
