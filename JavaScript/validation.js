@@ -7,29 +7,52 @@ const question = document.querySelector(".question");
 checkButton.onclick = action;
 
 function action(){
-    let value = inputValue.value;
-
     //hide input div
-    inputForm.classList.replace("show-form","hide-form");
+    inputForm.classList.add("hide-form");
     display.classList.replace("hide-response","show-response");
 
     if(question.getAttribute("id") === "question-1"){
-        multipleOfThreeOrFive(value);
+        multipleOfThreeOrFive();
     }else if(question.getAttribute("id") === "question-2"){
-        evenFibonacciNumbers(value);
+        evenFibonacciNumbers();
     }else if(question.getAttribute("id") === "question-3"){
-        largestPrimeFactor(value);
+        largestPrimeFactor();
     }
 }
 
-function multipleOfThreeOrFive(data){
-    display.innerText = "1";
+function displayAnswer(correct){
+    if (correct){
+        display.innerText = "Correct Answer";
+    }else{
+        display.innerText = "Wrong Answer";
+    }
+}
+
+function multipleOfThreeOrFive(){
+    let sum = 0;
+    let number = document.querySelector("#questionOneRandomTargetValue").innerText;
+
+    for(let i = 0; i < number; i++){
+        if (i % 3 == 0 || i % 5 == 0){
+            sum += i;
+        }
+    }
+    console.log(sum);
+    displayAnswer(sum == inputValue.value);
 }
 
 function evenFibonacciNumbers(data){
-    display.innerText = "2";
+    // if (false){
+    //     display.innerText = "Correct Answer";
+    // }else{
+    //     display.innerText = "Wrong Answer";
+    // }
 }
 
 function largestPrimeFactor(data){
-    display.innerText = "3";
+    // if (false){
+    //     display.innerText = "Correct Answer";
+    // }else{
+    //     display.innerText = "Wrong Answer";
+    // }
 }
