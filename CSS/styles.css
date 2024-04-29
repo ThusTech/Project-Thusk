@@ -3,15 +3,13 @@ a{
     font-weight: solid;
 }
 
-.hide-response, .hide-form{
-    display:none;
+@media (max-width: 700px){
+    .logo{
+        display: none;
+    }
+
+    #question-1{
+        content: "1";
+    }
 }
 
-.show-response{
-    display: flex;
-    justify-content: center;
-}
-
-.show-form{
-    display: inline;
-}

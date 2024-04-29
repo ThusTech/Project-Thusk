@@ -13,55 +13,66 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-light">
-                <div class="container-fluid flex-column">
-                    <div class="logo justify-content-start">
-                        <h1>Project Thusk</h1>
-                    </div>
-                    <div class="d-flex">
-                        <div class="navbar-nav">
-                            <a id="question-1" class="question nav-link navbar-brand mx-5 border rounded-pill" href="#">Question 1</a>
-                            <a id="question-2" class="question nav-link navbar-brand mx-5 border rounded-pill" href="#">Question 2</a>
-                            <a id="question-3" class="question nav-link navbar-brand mx-5 border rounded-pill" href="#">Question 3</a>
+        <div class="container-fluid">
+            <header>
+                <nav class="navbar navbar-expand-sm navbar-light">
+                    <div class="row mx-auto" style="width:100%">
+                        <div class="logo justify-content-start">
+                            <h1 class="fst-italic">Project Thusk</h1>
                         </div>
+                        
+                        <div class="navbar-nav border mt-4 d-flex justify-content-center py-2">
+                            <a id="question-1" class="question nav-link text-wrap navbar-brand mx-5 border rounded-pill" href="#" style="width:10%">Question 1</a>
+                            <a id="question-2" class="question nav-link text-wrap navbar-brand mx-5 border rounded-pill" href="#" style="width:10%">Question 2</a>
+                            <a id="question-3" class="question nav-link text-wrap navbar-brand mx-5 border rounded-pill" href="#" style="width:10%">Question 3</a>
+                        </div>
+                        
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <div class="row content-section my-5">
+                    <div class="row">
+                        <h3 class="problem-title">Name of the Problem</h3>
+                    </div>
+    
+                    <div class="row description-row border border-light mb-5">
+                        <p class="description ml-0 d-flex justify-content-center px-4">
+                        </p>
+                        <p id="questionOneRandomTargetValue" class="d-flex justify-content-center fw-bold fs-1"></p>
+                    </div>
+    
+                    <div class="row d-flex mx-auto flex-column align-items-center border border-light" style="width:40%">
+                        <div id="answer-form">
+                            <label for="answer" class="my-3">Answer: <input id="answer" class="input-answer" type="Text" name="answer" style="
+                                width:100%"></label>
+                            <input class="submit mb-3" type="submit" value="Check" name="check">
+                        </div>
+    
+                        <!-- Animation that shows wrong or right answer -->
+    
+    
+                        <p id="answer-response" class="fw-bold fd-2 d-flex justify-content-center"></p>
                     </div>
                 </div>
-            </nav>
-        </header>
-        <main>
-            <!-- <div class="container-fluid content-section my-5">
-                <div class="row">
-                    <h3 class="problem-title">Name of the Problem</h3>
-                </div> -->
+    
+                <div class="row welcome-message my-5">
+                    <h1 class="fst-italic">Welcome</h1>
+                    <p class="message fw-light fs-2 mx-5 mt-4">Welcome to the thrilling world of numbers and code! Are you ready to embark on an exhilarating
+                    journey through the realms of mathematics and programming? Whether you're a seasoned problem-solver
+                    or a curious novice, this quiz game is tailor-made to challenge and entertain you.</p>
+                    <p class="message fw-light fs-3 mx-5">Prepare to exercise your mental muscles as you delve into a labyrinth of equations, algorithms,
+                    and logic puzzles. With each question, you'll encounter a new opportunity to sharpen your skills,
+                    expand your knowledge, and unleash your inner mathematician or coder.</p> 
+                    <p class="message mx-5 fw-bold">Navigate the panel to attempt a problem</p>
+                </div>
+            </main>
 
-                <!-- <div class="row description-row border border-light mb-5">
-                    <p class="description ml-0 d-flex justify-content-center px-4">
-                    </p>
-                    <p id="questionOneRandomTargetValue" class="d-flex justify-content-center fw-bold fs-1"></p>
-                </div> -->
+            <footer>
 
-                <!-- <div class="row d-flex mx-auto flex-column align-items-center border border-light" style="width:40%">
-                    <div id="answer-form">
-                        <label for="answer" class="my-3">Answer: <input id="answer" class="input-answer" type="Text" name="answer" style="
-                            width:100%"></label>
-                        <input class="submit mb-3" type="submit" value="Check" name="check">
-                    </div> -->
-
-                    <!-- Animation that shows wrong or right answer -->
-
-
-                    <!-- <p id="answer-response" class="fw-bold fd-2 d-flex justify-content-center"></p> -->
-                <!-- </div>
-            </div> -->
-
-            <div>
-                
-            </div>
-        </main>
-        <footer>
-
-        </footer>
+            </footer>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

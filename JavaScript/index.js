@@ -40,6 +40,7 @@ question2.onclick = questionTwo;
 question3.onclick = questionThree;
 
 function update(content){
+    $(".welcome-message").hide();
     $(".content-section").show();
     title.innerText = content.title;
     description.innerText = content.description;
