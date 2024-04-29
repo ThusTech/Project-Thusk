@@ -6,11 +6,13 @@ const problemTitle = document.querySelector(".problem-title");
 
 checkButton.onclick = action;
 
-function action(){
-    //hide input div
-    inputForm.classList.add("hide-form");
-    display.classList.replace("hide-response","show-response");
+// RemotePlayback.onclick = reset();
 
+
+function action(){
+    $("#answer-form").hide();
+    $("#answer-response").show();
+    
     if(problemTitle.innerText == "Multiples of 3 or 5"){
         multipleOfThreeOrFive();
     }else if(problemTitle.innerText == "Even Fibonacci Numbers"){
@@ -49,7 +51,9 @@ function evenFibonacciNumbers(){
     let fibo = [firstTerm,secondTerm];
     let thirdTerm = firstTerm + secondTerm;
 
-    while (thirdTerm <= 10){
+    let number = document.querySelector("#questionOneRandomTargetValue").innerText;
+
+    while (thirdTerm <= number){
         fibo.push(thirdTerm);
         firstTerm = secondTerm;
         secondTerm = thirdTerm;
@@ -65,7 +69,7 @@ function evenFibonacciNumbers(){
 
 function largestPrimeFactor(){
     let primeFactor = [];
-    let value = 8;
+    let value = document.querySelector("#questionOneRandomTargetValue").innerText;
     let count = 2;
 
     while (value/count >= 1){
