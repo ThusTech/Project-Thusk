@@ -3,13 +3,43 @@ a{
     font-weight: solid;
 }
 
-@media (max-width: 700px){
-    .logo{
+.toggle{
+    width:100%;
+    text-align: right;
+    box-sizing: border-box;
+    font-size: 40px;
+    display: none;
+}
+
+.desktop-nav{
+    display: flex;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    border-top: 1px solid salmon;
+    border-bottom: 1px solid salmon;
+}
+
+.desktop-nav .question:hover{
+    background-color: antiquewhite;
+}
+
+.bi-check2,.bi-x-circle{
+    font-size: 50px;
+}
+
+.bi-arrow-clockwise:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .logo, .desktop-nav{
         display: none;
     }
 
-    #question-1{
-        content: "1";
+    .toggle{
+        display: block;
     }
 }
-

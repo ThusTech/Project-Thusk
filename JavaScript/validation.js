@@ -11,7 +11,7 @@ checkButton.onclick = action;
 
 function action(){
     $("#answer-form").hide();
-    $("#answer-response").show();
+    $(".answer-response").show();
     
     if(problemTitle.innerText == "Multiples of 3 or 5"){
         multipleOfThreeOrFive();
@@ -26,8 +26,11 @@ function action(){
 function displayAnswer(correct){
     if (correct){
         display.innerText = "Correct Answer";
+        $(".correct-response-icon").show();
     }else{
         display.innerText = "Wrong Answer";
+        $(".wrong-response-icon").show();
+        $(".retry").show();
     }
 }
 

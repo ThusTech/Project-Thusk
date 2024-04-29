@@ -11,6 +11,9 @@ const questionOneDescripSpan = document.querySelector("#questionOneRandomTargetV
 let randomNumber = 0;
 
 $(".content-section").hide();
+$(".retry").hide();
+$(".correct-response-icon").hide();
+$(".wrong-response-icon").hide();
 
 
 const questions = {
@@ -39,11 +42,25 @@ question1.onclick = questionOne;
 question2.onclick = questionTwo;
 question3.onclick = questionThree;
 
+$(".bi-arrow-clockwise").click(function(){
+    showOrHide();
+});
+
+function showOrHide(){
+    $(".retry").hide();
+    $(".correct-response-icon").hide();
+    $(".answer-response").hide();
+    $(".wrong-response-icon").hide();
+
+    $("#answer-form").show();
+}
+
 function update(content){
     $(".welcome-message").hide();
     $(".content-section").show();
     title.innerText = content.title;
     description.innerText = content.description;
+    showOrHide()
 }
 
 function randomizeValue(){
