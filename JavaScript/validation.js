@@ -6,18 +6,16 @@ const problemTitle = document.querySelector(".problem-title");
 
 checkButton.onclick = action;
 
-// RemotePlayback.onclick = reset();
-
 
 function action(){
     $("#answer-form").hide();
     $(".answer-response").show();
     
-    if(problemTitle.innerText == "Multiples of 3 or 5"){
+    if(problemTitle.innerText === "Multiples of 3 or 5"){
         multipleOfThreeOrFive();
-    }else if(problemTitle.innerText == "Even Fibonacci Numbers"){
+    }else if(problemTitle.innerText === "Even Fibonacci Numbers"){
         evenFibonacciNumbers();
-    }else if(problemTitle.innerText == "Largest Prime Factor"){
+    }else if(problemTitle.innerText === "Largest Prime Factor"){
         largestPrimeFactor();
     }
 
@@ -43,7 +41,6 @@ function multipleOfThreeOrFive(){
             sum += i;
         }
     }
-    console.log(sum);
     displayAnswer(sum == inputValue.value);
 }
 
