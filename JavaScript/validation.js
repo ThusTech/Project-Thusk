@@ -1,32 +1,28 @@
-const checkButton = document.querySelector(".submit");
-const inputValue = document.querySelector("#answer");
-const inputForm = document.querySelector("#answer-form");
-const display = document.querySelector("#answer-response");
-const problemTitle = document.querySelector(".problem-title");
+// const checkButton = $(".submit");
+const inputValue = $("#answer");
+const inputForm = $("#answer-form");
+const problemTitle = $(".problem-title");
 
-checkButton.onclick = action;
-
-
-function action(){
+$(".submit").on("click",function(){
     $("#answer-form").hide();
     $(".answer-response").show();
     
-    if(problemTitle.innerText === "Multiples of 3 or 5"){
+    if(problemTitle.text() === "Multiples of 3 or 5"){
         multipleOfThreeOrFive();
-    }else if(problemTitle.innerText === "Even Fibonacci Numbers"){
+    }else if(problemTitle.text() === "Even Fibonacci Numbers"){
         evenFibonacciNumbers();
-    }else if(problemTitle.innerText === "Largest Prime Factor"){
+    }else if(problemTitle.text() === "Largest Prime Factor"){
         largestPrimeFactor();
     }
+});
 
-}
 
-function displayAnswer(correct){
+function displayAnswer(correct, answer){
     if (correct){
-        display.innerText = "Correct Answer";
+        $("#answer-response").text("Correct, Answer is: "+ answer).css("color", "green");
         $(".correct-response-icon").show();
     }else{
-        display.innerText = "Wrong Answer";
+        $("#answer-response").text("Wrong! Answer is: "+ answer).css("color", "red");
         $(".wrong-response-icon").show();
         $(".retry").show();
     }
@@ -34,14 +30,14 @@ function displayAnswer(correct){
 
 function multipleOfThreeOrFive(){
     let sum = 0;
-    let number = document.querySelector("#questionOneRandomTargetValue").innerText;
+    let number = $("#questionOneRandomTargetValue").text();
 
     for(let i = 0; i < number; i++){
         if (i % 3 == 0 || i % 5 == 0){
             sum += i;
         }
     }
-    displayAnswer(sum == inputValue.value);
+    displayAnswer(sum == inputValue.val(), sum);
 }
 
 function evenFibonacciNumbers(){
@@ -51,7 +47,7 @@ function evenFibonacciNumbers(){
     let fibo = [firstTerm,secondTerm];
     let thirdTerm = firstTerm + secondTerm;
 
-    let number = document.querySelector("#questionOneRandomTargetValue").innerText;
+    let number = $("#questionOneRandomTargetValue").text();
 
     while (thirdTerm <= number){
         fibo.push(thirdTerm);
@@ -64,12 +60,12 @@ function evenFibonacciNumbers(){
     return (curr % 2 === 0) ? acc + curr : acc;
   }, 0));
 
-  displayAnswer(sum == inputValue.value);
+  displayAnswer(sum == inputValue.val(), sum);
 }
 
 function largestPrimeFactor(){
     let primeFactor = [];
-    let value = document.querySelector("#questionOneRandomTargetValue").innerText;
+    let value = $("#questionOneRandomTargetValue").text();
     let count = 2;
 
     while (value/count >= 1){
@@ -85,5 +81,5 @@ function largestPrimeFactor(){
         return (curr > acc)  ? curr : acc;
         },primeFactor[0]);
 
-    displayAnswer(largestPrimeNumber == inputValue.value);
+    displayAnswer(largestPrimeNumber == inputValue.val(), sum);
 }

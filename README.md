@@ -3,7 +3,7 @@
 This is a simple quiz application built using HTML, CSS, JavaScript, jQuery, and Bootstrap.
 
 ## Features:
-* Multiple-choice questions
+* question tabs
 * Interactive interface
 * Immediate feedback on answer submission
 

@@ -1,21 +1,9 @@
-const question1 = document.querySelector(".question-1");
-const question2 = document.querySelector(".question-2");
-const question3 = document.querySelector(".question-3");
-
-
-const description = document.querySelector(".description");
-const descriptionContainer = document.querySelector(".description-row");
-const title = document.querySelector(".problem-title");
-const questionOneDescripSpan = document.querySelector("#questionOneRandomTargetValue");
-
-let randomNumber = 0;
-
 $(".content-section").hide();
 $(".retry").hide();
 $(".correct-response-icon").hide();
 $(".wrong-response-icon").hide();
 
-
+let randomNumber = 0;
 const questions = {
     "question-1":{
         title: "Multiples of 3 or 5",
@@ -38,11 +26,28 @@ const questions = {
     }
 }
 
-question1.onclick = questionOne;
-question2.onclick = questionTwo;
-question3.onclick = questionThree;
+$(".message-title").hide();
+$(".message-title").fadeIn(10000);
 
-$(".bi-arrow-clockwise").click(function(){
+// Onclick events for question tabs
+$(".question-1").on("click", function(){
+    update(questions["question-1"]);
+    getRandomValue();
+});
+
+$(".question-2").on("click", function(){
+    update(questions["question-2"]);
+    getRandomValue();
+});
+
+$(".question-3").on("click", function(){
+    update(questions["question-3"]);
+    getRandomValue();
+});
+
+
+//  OnClick event
+$(".bi-arrow-clockwise").on("click", function(){
     showOrHide();
 });
 
@@ -58,30 +63,16 @@ function showOrHide(){
 function update(content){
     $(".welcome-message").hide();
     $(".content-section").show();
-    title.innerText = content.title;
-    description.innerText = content.description;
+    $(".problem-title").text(content.title);
+    $(".description").text(content.description);
+
     showOrHide()
 }
 
-function randomizeValue(){
+function getRandomValue(){
     const min = 10;
     const max = 1000;
 
     const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
-    questionOneDescripSpan.innerText = randomNumber;
-}
-
-function questionOne(){
-    update(questions["question-1"]);
-    randomizeValue();
-}
-
-function questionTwo(){
-    update(questions["question-2"]);
-    randomizeValue();
-}
-
-function questionThree(){
-    update(questions["question-3"]);
-    randomizeValue();
+    $("#questionOneRandomTargetValue").text(randomNumber);
 }
