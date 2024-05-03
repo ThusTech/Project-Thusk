@@ -17,27 +17,21 @@ $(".submit").on("click",function(){
 });
 
 
-function displayAnswer(correct, answer){
-    if (correct){
-        $("#answer-response").text("Correct, Answer is: "+ answer).css("color", "green");
-        $(".correct-response-icon").show();
-    }else{
-        $("#answer-response").text("Wrong! Answer is: "+ answer).css("color", "red");
-        $(".wrong-response-icon").show();
-        $(".retry").show();
-    }
+function displayAnswer(answer){
+    $("#answer-response").text("Answer is: "+ answer).css("color", "green");
+    $(".retry").show();
 }
 
 function multipleOfThreeOrFive(){
     let sum = 0;
-    let number = $("#questionOneRandomTargetValue").text();
+    let number = inputValue.val();
 
     for(let i = 0; i < number; i++){
         if (i % 3 == 0 || i % 5 == 0){
             sum += i;
         }
     }
-    displayAnswer(sum == inputValue.val(), sum);
+    displayAnswer(sum);
 }
 
 function evenFibonacciNumbers(){
@@ -47,7 +41,7 @@ function evenFibonacciNumbers(){
     let fibo = [firstTerm,secondTerm];
     let thirdTerm = firstTerm + secondTerm;
 
-    let number = $("#questionOneRandomTargetValue").text();
+    let number = inputValue.val()
 
     while (thirdTerm <= number){
         fibo.push(thirdTerm);
@@ -56,16 +50,18 @@ function evenFibonacciNumbers(){
         thirdTerm = firstTerm + secondTerm;
     }
 
+    console.log(fibo);
+
   let sum = ( fibo.reduce((acc, curr)=>{
     return (curr % 2 === 0) ? acc + curr : acc;
   }, 0));
 
-  displayAnswer(sum == inputValue.val(), sum);
+  displayAnswer(sum);
 }
 
 function largestPrimeFactor(){
     let primeFactor = [];
-    let value = $("#questionOneRandomTargetValue").text();
+    let value = inputValue.val();
     let count = 2;
 
     while (value/count >= 1){
@@ -81,5 +77,5 @@ function largestPrimeFactor(){
         return (curr > acc)  ? curr : acc;
         },primeFactor[0]);
 
-    displayAnswer(largestPrimeNumber == inputValue.val(), sum);
+    displayAnswer(largestPrimeNumber);
 }

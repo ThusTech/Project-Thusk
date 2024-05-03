@@ -3,7 +3,6 @@ $(".retry").hide();
 $(".correct-response-icon").hide();
 $(".wrong-response-icon").hide();
 
-let randomNumber = 0;
 const questions = {
     "question-1":{
         title: "Multiples of 3 or 5",
@@ -32,17 +31,14 @@ $(".message-title").fadeIn(10000);
 // Onclick events for question tabs
 $(".question-1").on("click", function(){
     update(questions["question-1"]);
-    getRandomValue();
 });
 
 $(".question-2").on("click", function(){
     update(questions["question-2"]);
-    getRandomValue();
 });
 
 $(".question-3").on("click", function(){
     update(questions["question-3"]);
-    getRandomValue();
 });
 
 
@@ -53,10 +49,7 @@ $(".bi-arrow-clockwise").on("click", function(){
 
 function showOrHide(){
     $(".retry").hide();
-    $(".correct-response-icon").hide();
     $(".answer-response").hide();
-    $(".wrong-response-icon").hide();
-
     $("#answer-form").show();
 }
 
@@ -67,12 +60,4 @@ function update(content){
     $(".description").text(content.description);
 
     showOrHide()
-}
-
-function getRandomValue(){
-    const min = 10;
-    const max = 1000;
-
-    const randomNumber = Math.floor(Math.random() * (max - min + 1) + min);
-    $("#questionOneRandomTargetValue").text(randomNumber);
 }
